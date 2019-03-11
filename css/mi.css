@@ -86,7 +86,7 @@ a {
 	width: 124px; 
 	position: absolute; 
 	top: 28px; 
-	left: -28px; 
+	left: -36px; 
 	padding: 18px 0px 2px;
 	background: #fff; 
 	margin-left: -55px; 
@@ -111,14 +111,14 @@ a {
     top: 40px;
     z-index: 31;
     width: 316px;
-	height: 83px;
+	/* height: 83px; */
     padding: 15px 0 0;
     color: #424242;
     background: #fff;
     box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 .shopping-carcar{
-	line-height: 70px;
+	line-height: 60px;
 	text-align: center;
 }
 /* 小米官网顶部导航结束 */
@@ -173,19 +173,24 @@ a {
 	/* background: #008000; */
 	float: right;
 	margin-top: 25px;
+	position: relative;
 }
 .search-input{
 	width: 245px;
 	height: 50px;
-	border: 1px solid #b0b0b0;
+	border: 1px solid #e0e0e0;
 	box-sizing: border-box;
 	padding-left: 10px;
 	border-right: 0;
+	outline: none;
+}
+.search_border{
+	border: 1px solid #333;
 }
 .submit-btn{
 	width: 50px;
 	height: 50px;
-	border: 1px solid #B0B0B0;
+	border: 1px solid #e0e0e0;
 	float: right;
 	box-sizing: border-box;	
 	text-align: center;
@@ -199,7 +204,44 @@ a {
 	font-size: 24px;
 	cursor: pointer;
 }
-
+.search-bar .keyword-list {
+	display: none;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    z-index: 20;
+    width: 243.5px;
+    border: 1px solid #ff6700;
+    border-top: 0;
+    background: #fff;
+}
+.search-bar .keyword-list ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.search-bar .keyword-list li a {
+    position: relative;
+    display: block;
+    padding: 6px 15px;
+    font-size: 12px;
+    color: #424242;
+}
+.search-bar .keyword-list li {
+	background: #fff;
+}
+.search-bar .keyword-list li:hover{
+	background: rgba(0, 0, 0, 0.05);
+}
+.search-bar .keyword-list li .keyword {
+    color: #000000;
+}
+.search-bar .keyword-list li .result {
+    position: absolute;
+    right: 15px;
+    top: 6px;
+    color: #b0b0b0;
+}
 /* 小米官网搜索部分结束 */
 /* 轮播图开始 */
 .banner-box{
@@ -228,6 +270,64 @@ a {
 	padding-left: 30px;
 	box-sizing: border-box;
 	cursor:pointer;/* 变小手 */
+}
+.bannerList-r{
+	display: none;
+    position: absolute;
+    left: 234px;
+    top: 0;
+    z-index: 24;
+    height: 458px;
+    border: 1px solid #e0e0e0;
+    border-left: 0;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+}
+.children-list-col {
+    width: 248px;
+	float: left;
+}
+.children-list {
+    height: 458px;
+    margin: 0;
+    padding: 2px 0;
+    list-style-type: none;
+}
+.children-list li {
+    position: relative;
+    float: left;
+    width: 265px;
+    height: 76px;
+}
+.children-list .link {
+    display: block;
+    padding: 18px 20px;
+    line-height: 40px;
+    color: #333;
+    transition: color .2s;
+}
+.children-list .link:hover{
+	cursor: pointer;
+	color: #ff6700;
+}
+.children-list img{
+	width: 40px;
+	height: 40px;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+.children-list .text {
+    line-height: 40px;
+}
+
+.bannerList-item .r1{
+	width: 992px;
+}
+.bannerList-item .r2{
+	width: 496px;
+}
+.bannerList-item .r3{
+	width: 795px;
 }
 .bannerList-item:hover{
 	background: #ff6700;
@@ -658,10 +758,40 @@ p.goods-price del{
 	position: relative;
 	float: left;
 	transition: all 0.1s;
+	overflow: hidden;
 }
 .mobile-item:hover{
-	transform: translateY(-5px);
+	transform: translateY(-3px);
 	box-shadow: 0 5px 5px 5px rgba(0,0,0,0.1);
+}
+.mobile-item .black{
+	width: 234px;
+	height: 90px;
+	background: #FF6700;
+	position: absolute;
+	top: 300px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	font-size: 12px;
+	transition: all .3s linear;
+	padding: 15px 5px;
+	box-sizing: border-box;
+}
+.mobile-item:hover .black{
+	transform: translate(0px,-90px);
+}
+.black .top{
+	color: #FFFFFF;
+	font-weight: 800;
+	padding: 2px 20px;
+	box-sizing: border-box;	
+}
+.black .bottom{
+	color: rgba(255,255,255,0.6);
+	padding: 2px 20px;
+	box-sizing: border-box;
+	font-weight: 400;
 }
 	
 .mobile-top-titles{
