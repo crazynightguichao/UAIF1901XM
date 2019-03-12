@@ -3,7 +3,7 @@ window.onload=function(){
 	// 导航栏
 	let box1 = document.getElementsByClassName("nav-erwei")[0]
 	let box2 = document.getElementsByClassName("nav-erweima")[0]
-	box2.style.display = "none"
+	// box2.style.display = "none"
 	box1.onmouseover = function(){
 	    box2.style.display = "block"
 	}
@@ -11,18 +11,19 @@ window.onload=function(){
 	    box2.style.display = "none"
 	}
 
-    // 购物车
-	let box3 = document.getElementsByClassName("shopping-car")[0]
-	let box4 = document.getElementsByClassName("shopping-carcar")[0]
-	box4.style.display = "none"
-	box3.onmouseover = function(){
-	    box4.style.display = "block"
-		box4.style.height = "83px"
-	}
-	box3.onmouseout = function(){
-	    box4.style.display = "none"
-		
-	}
+	// 导航栏下选项卡
+	let links = document.querySelectorAll(".search-list .nav .link")
+	let boxs3 = document.querySelectorAll(".search-list .nav .link .list-box")
+    links.forEach(function(item,i){
+		item.onmouseenter = function(){
+			boxs3.forEach(function(item){
+				item.style.zIndex = 0
+			})
+			boxs3[i].style.zIndex = 10
+		}
+
+    })
+	
 	
 	// 搜索
 	let search = document.querySelector(".search-bar")
@@ -86,5 +87,32 @@ window.onload=function(){
 			cons[i].style.display = "none"
 		}
 	})
-	
+
+	// 家电开始(选项卡功能函数)
+    function select(n,b) {
+        let navs = document.querySelectorAll(n)
+        let boxs = document.querySelectorAll(b)
+        // alert(boxs.length)
+        navs.forEach(function (item, i) {
+            item.onmouseenter = function () {
+                // nav
+                navs.forEach(function (item2) {
+                    item2.classList.remove("active")
+                })
+                this.classList.add("active")
+                // box
+                boxs.forEach(function (item) {
+                    item.classList.remove("active")
+                })
+                boxs[i].classList.add("active")
+            }
+        })
+    }
+    select(".pop1 .ls",".con1 .furni-right")
+    select(".pop2 .ls",".con2 .furni-right")
+    select(".pop3 .ls",".con3 .furni-right")
+    select(".pop4 .ls",".con4 .furni-right")
+    select(".pop5 .ls",".con5 .furni-right")
+    // 家电结束
+
 }
