@@ -88,6 +88,72 @@ window.onload=function(){
 		}
 	})
 
+	//轮播图开始
+	let index = 0
+    let pages = document.querySelectorAll(".banner-imgs .imgBox a")
+    let banner = document.querySelector(".banner-imgs")
+    let pre = document.querySelector(".banner-imgs .left")
+    let next = document.querySelector(".banner-imgs .right")
+    let dot = document.querySelectorAll(".dot")
+    //事件 触发才调用 （异步）
+    banner.onmouseenter = function(){
+        clearInterval(t)
+    }
+    banner.onmouseleave = function(){
+        t = setInterval(run,2000)
+    }
+    function run(status='next'){  //默认next
+        //轮播一次
+        if(status=='next'){
+            index+=1
+        }else if(status=='pre'){
+            index-=1
+        }
+        if(index<0){
+            index=4
+        }
+        if(index>4){
+            index=0
+        }
+        pages.forEach(function(item,i){
+            item.classList.remove("active")
+        })
+        pages[index].classList.add("active")
+        
+
+    }
+    t = setInterval(run,2000)
+
+
+    next.onclick = function(){
+        run()
+    }
+    pre.onclick = function(){
+        run('pre')
+	}
+
+	dot.forEach(function(item,i){
+        item.onclick = function(){
+            pages.forEach(function(item,i){
+                item.classList.remove("active")
+            })
+            pages[i].classList.add("active")
+            dot.forEach(function(item,i){
+                item.classList.remove("active")
+            })
+			dot[i].classList.add("active")
+		}
+		
+	})
+	// dot.onfocus = function(){
+	// 	dot.style.backgroundColor="#000000"
+	// }
+	// dot.onblur = function(){
+	// 	dot.style.backgroundColor="#fff"
+	// }
+	
+	
+
 	// 家电开始(选项卡功能函数)
     function select(n,b) {
         let navs = document.querySelectorAll(n)
