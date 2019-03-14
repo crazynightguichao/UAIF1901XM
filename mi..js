@@ -179,6 +179,6 @@ window.onload=function(){
     select(".pop3 .ls",".con3 .furni-right")
     select(".pop4 .ls",".con4 .furni-right")
     select(".pop5 .ls",".con5 .furni-right")
-    // 家电结束
+	// 家电结束
 
 }
