@@ -1418,7 +1418,7 @@ h3.hot-title{
 .nei-bdone{
 	width: 296px;
     height: 100%;
-    background: #ffffff;
+    background-color: #ffffff;
     position: relative;
     cursor: pointer;
     transition: all 0.1s linear;
@@ -1439,7 +1439,8 @@ h3.hot-title{
     position: absolute;
     left: 0;
     top: 198px;
-    opacity: 0;
+	opacity: 0;
+	z-index: 5;
     
 }
 .nei-bdone .you{
@@ -1454,7 +1455,8 @@ h3.hot-title{
     position: absolute;
     right: 0;
     top: 198px;
-    opacity: 0;
+	opacity: 0;
+	z-index: 5;
     
 }
 .nei-bdone:hover .zuo{
@@ -1463,7 +1465,21 @@ h3.hot-title{
 .nei-bdone:hover .you{
 	opacity: 1;
 }
-
+.nei-bigbox{
+	width: 296px;
+    height: 100%; 
+	position: relative;
+	background-color: #fff;
+	overflow: hidden;
+}
+.nei-box{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+}
 .nei-bdone .line{
 	width: 100%;
     height: 1px;
@@ -1509,6 +1525,31 @@ h3.hot-title{
     width: 216px;
     height: 154px;
     margin: 30px auto 0;
+}
+.slider{
+	height: 16px;
+	position: absolute;
+	bottom: 9px;
+	left: 45%;
+}
+.slider-dot{
+	float: left;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	border: 2px solid #b9beba;
+	margin: 3px;
+	cursor: pointer;
+}
+.slider-dot:hover{
+	background: #e33333;
+	border-color: #e33333;
+	box-shadow: 0 0 0 3px #fdd9dd;
+}
+.sdot-active{
+	background: #e33333;
+	border-color: #e33333;
+	box-shadow: 0 0 0 3px #fdd9dd;
 }
 .nei-body .points{
 	width: 90px;
